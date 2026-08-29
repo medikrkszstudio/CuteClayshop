@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CuteClayShop | Handmade & Cute</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ARKA PLAN
+    ========================== -->
+
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
+    <div class="background-shape shape-three"></div>
+
+
+    <!-- =========================
+         ÜST BİLGİ
+    ========================== -->
+
+    <div class="announcement-bar">
+        <div class="container announcement-content">
+            <span>🐸 500 TL ve üzeri siparişlerde ücretsiz kargo!</span>
+            <span>✨ Sevgiyle el yapımı</span>
+        </div>
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a
+                href="#anasayfa"
+                class="brand"
+            >
+                <img
+                    src="Sevimli Kil Aksesuar Dükkanı Logosu (4).png"
+                    alt="CuteClayShop Logo"
+                >
+
+                <div class="brand-text">
+                    <strong>CuteClayShop</strong>
+                    <span>handmade & cute</span>
+                </div>
+            </a>
+
+
+            <nav class="desktop-nav">
+                <a href="#anasayfa">Ana Sayfa</a>
+                <a href="#urunler">Ürünler</a>
+                <a href="#hakkimizda">Hakkımızda</a>
+                <a href="#iletisim">İletişim</a>
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="header-action"
+                    id="searchBtn"
+                    type="button"
+                    aria-label="Ara"
+                >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+
+                <button
+                    class="header-action"
+                    id="favoritesBtn"
+                    type="button"
+                    aria-label="Favoriler"
+                >
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span
+                        class="count-badge"
+                        id="favoriteCount"
+                    >
+                        0
+                    </span>
+                </button>
+
+
+                <button
+                    class="header-action cart-action"
+                    id="cartBtn"
+                    type="button"
+                    aria-label="Sepet"
+                >
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span
+                        class="count-badge"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+                </button>
+
+
+                <button
+                    class="seller-button"
+                    id="sellerOpenBtn"
+                    type="button"
+                >
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span>Satıcı</span>
+                </button>
+
+
+                <button
+                    class="mobile-menu-button"
+                    id="mobileMenuBtn"
+                    type="button"
+                    aria-label="Menü"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MOBİL MENÜ
+    ========================== -->
+
+    <div
+        class="mobile-menu-overlay"
+        id="mobileMenuOverlay"
+    ></div>
+
+
+    <aside
+        class="mobile-menu"
+        id="mobileMenu"
+    >
+
+        <div class="mobile-menu-top">
+
+            <strong>Menü 🐸</strong>
+
+            <button
+                id="closeMobileMenu"
+                type="button"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <a href="#anasayfa" class="mobile-nav-link">🏡 Ana Sayfa</a>
+        <a href="#urunler" class="mobile-nav-link">🛍️ Ürünler</a>
+        <a href="#hakkimizda" class="mobile-nav-link">🐸 Hakkımızda</a>
+        <a href="#iletisim" class="mobile-nav-link">💌 İletişim</a>
+
+    </aside>
+
+
+    <!-- =========================
+         ARAMA
+    ========================== -->
+
+    <div
+        class="modal search-modal"
+        id="searchModal"
+    >
+
+        <div class="search-modal-box">
+
+            <button
+                class="modal-close"
+                data-close="searchModal"
+                type="button"
+            >
+                ✕
+            </button>
+
+
+            <span class="eyebrow">
+                NE ARIYORSUN? 🔎
+            </span>
+
+
+            <h2>Sevimli bir şey bulalım!</h2>
+
+
+            <div class="search-input-wrapper">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Örn: kurbağa, charm, anahtarlık..."
+                >
+
+            </div>
+
+
+            <div
+                class="search-results"
+                id="searchResults"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ANA SAYFA
+    ========================== -->
+
+    <main id="anasayfa">
+
+
+        <!-- HERO -->
+
+        <section class="hero-section">
+
+            <div class="container hero-grid">
+
+
+                <div class="hero-content">
+
+                    <div class="hero-pill">
+                        <span>✨</span>
+                        El yapımı • Sevimli • Sana özel
+                    </div>
+
+
+                    <h1>
+                        Küçük detaylar,
+                        <span>büyük mutluluklar!</span>
+                    </h1>
+
+
+                    <p>
+                        El yapımı polimer kil aksesuarlar, sevimli charmlar,
+                        anahtarlıklar ve sana özel minik tasarımlar. 🐸💚
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#urunler"
+                            class="primary-button"
+                        >
+                            Ürünleri Keşfet
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+
+                        <button
+                            class="secondary-button"
+                            id="surpriseBtn"
+                            type="button"
+                        >
+                            <span>🎁</span>
+                            Bana Sürpriz Yap
+                        </button>
+
+                    </div>
+
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <strong>🐸</strong>
+                            <span>Sevgiyle<br>Yapıldı</span>
+                        </div>
+
+                        <div>
+                            <strong>🎨</strong>
+                            <span>Tamamen<br>El Yapımı</span>
+                        </div>
+
+                        <div>
+                            <strong>💚</strong>
+                            <span>Özel<br>Tasarımlar</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-art">
+
+                    <div class="hero-glow"></div>
+
+
+                    <div class="hero-main-card">
+
+                        <div class="hero-logo-box">
+
+                            <img
+                                src="Sevimli Kil Aksesuar Dükkanı Logosu (4).png"
+                                alt="CuteClayShop"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-bubble bubble-one">
+                        🐸
+                        <span>çok tatlı!</span>
+                    </div>
+
+
+                    <div class="floating-bubble bubble-two">
+                        ✨
+                        <span>el yapımı</span>
+                    </div>
+
+
+                    <div class="floating-bubble bubble-three">
+                        💚
+                        <span>sana özel</span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ÖZELLİKLER -->
+
+        <section class="features-section">
+
+            <div class="container features-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+
+                    <div>
+                        <h3>El Yapımı</h3>
+                        <p>Her ürün tek tek özenle hazırlanır.</p>
+                    </div>
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">💌</div>
+
+                    <div>
+                        <h3>Sevgiyle Paketlenir</h3>
+                        <p>Minik ve tatlı sürprizlerle!</p>
+                    </div>
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+
+                    <div>
+                        <h3>Güvenli Gönderim</h3>
+                        <p>Siparişlerin güvenle hazırlanır.</p>
+                    </div>
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">🐸</div>
+
+                    <div>
+                        <h3>Cute Tasarımlar</h3>
+                        <p>Sıradan değil, çok daha sevimli!</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- KATEGORİLER -->
+
+        <section class="categories-section">
+
+            <div class="container">
+
+                <div class="section-heading center-heading">
+
+                    <span class="eyebrow">
+                        KÜÇÜK BİR DÜNYA 🐸
+                    </span>
+
+                    <h2>Kategorileri Keşfet</h2>
+
+                    <p>
+                        Sana en sevimli gelen tasarımı bul.
+                    </p>
+
+                </div>
+
+
+                <div class="category-grid">
+
+                    <button
+                        class="category-card active-category"
+                        data-category="all"
+                        type="button"
+                    >
+                        <span class="category-emoji">🌷</span>
+                        <strong>Tümü</strong>
+                    </button>
+
+
+                    <button
+                        class="category-card"
+                        data-category="Anahtarlık"
+                        type="button"
+                    >
+                        <span class="category-emoji">🔑</span>
+                        <strong>Anahtarlık</strong>
+                    </button>
+
+
+                    <button
+                        class="category-card"
+                        data-category="Charm"
+                        type="button"
+                    >
+                        <span class="category-emoji">🧸</span>
+                        <strong>Charm</strong>
+                    </button>
+
+
+                    <button
+                        class="category-card"
+                        data-category="Küpe"
+                        type="button"
+                    >
+                        <span class="category-emoji">✨</span>
+                        <strong>Küpe</strong>
+                    </button>
+
+
+                    <button
+                        class="category-card"
+                        data-category="Kolye"
+                        type="button"
+                    >
+                        <span class="category-emoji">💚</span>
+                        <strong>Kolye</strong>
+                    </button>
+
+
+                    <button
+                        class="category-card"
+                        data-category="Diğer"
+                        type="button"
+                    >
+                        <span class="category-emoji">🎀</span>
+                        <strong>Diğer</strong>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ÜRÜNLER -->
+
+        <section
+            class="products-section"
+            id="urunler"
+        >
+
+            <div class="container">
+
+                <div class="section-heading products-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CUTECLAYSHOP SEÇKİLERİ
+                        </span>
+
+                        <h2>Sevimli Ürünlerimiz 🐸</h2>
+
+                        <p>
+                            Özenle hazırlanmış küçük mutluluklar.
+                        </p>
+
+                    </div>
+
+
+                    <div class="sort-wrapper">
+
+                        <label for="sortSelect">
+                            Sırala:
+                        </label>
+
+                        <select id="sortSelect">
+                            <option value="default">Önerilen</option>
+                            <option value="low">Fiyat: Düşükten Yükseğe</option>
+                            <option value="high">Fiyat: Yüksekten Düşüğe</option>
+                            <option value="new">En Yeniler</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product-grid"
+                    id="productGrid"
+                ></div>
+
+
+                <div
+                    class="empty-state hidden"
+                    id="emptyProducts"
+                >
+                    <div>🐸</div>
+                    <h3>Burada henüz ürün yok!</h3>
+                    <p>Yeni tatlı ürünler yakında eklenecek.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HAKKIMIZDA -->
+
+        <section
+            class="about-section"
+            id="hakkimizda"
+        >
+
+            <div class="container about-grid">
+
+                <div class="about-image-card">
+
+                    <div class="about-image-decoration decoration-a">
+                        🐸
+                    </div>
+
+                    <div class="about-image-decoration decoration-b">
+                        ✨
+                    </div>
+
+
+                    <img
+                        src="Sevimli Kil Aksesuar Dükkanı Logosu (4).png"
+                        alt="CuteClayShop"
+                    >
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <span class="eyebrow">
+                        BİZ KİMİZ? 🐸
+                    </span>
+
+
+                    <h2>
+                        Minik şeyleri
+                        <span>çok seviyoruz!</span>
+                    </h2>
+
+
+                    <p>
+                        CuteClayShop; sevimli, eğlenceli ve el yapımı
+                        polimer kil tasarımlarını bir araya getiren
+                        küçük ama rengârenk bir dünyadır.
+                    </p>
+
+
+                    <p>
+                        Her ürün detaylarına dikkat edilerek,
+                        sevgiyle ve özenle hazırlanır. 💚
+                    </p>
+
+
+                    <button
+                        class="primary-button"
+                        id="aboutShopBtn"
+                        type="button"
+                    >
+                        Alışverişe Başla
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NEWSLETTER -->
+
+        <section class="newsletter-section">
+
+            <div class="container newsletter-box">
+
+                <div class="newsletter-icon">
+                    🐸
+                </div>
+
+
+                <div class="newsletter-content">
+
+                    <span>YENİLİKLERDEN HABERDAR OL</span>
+
+                    <h2>
+                        CuteClayShop ailesine katıl! 💌
+                    </h2>
+
+                    <p>
+                        Yeni ürünleri ve tatlı sürprizleri kaçırma.
+                    </p>
+
+                </div>
+
+
+                <form id="newsletterForm">
+
+                    <input
+                        type="email"
+                        id="newsletterEmail"
+                        placeholder="E-posta adresin"
+                        required
+                    >
+
+                    <button type="submit">
+                        Katıl ✨
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer
+        class="site-footer"
+        id="iletisim"
+    >
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-brand">
+
+                <div class="brand footer-logo">
+
+                    <img
+                        src="Sevimli Kil Aksesuar Dükkanı Logosu (4).png"
+                        alt="CuteClayShop"
+                    >
+
+                    <div class="brand-text">
+                        <strong>CuteClayShop</strong>
+                        <span>handmade & cute</span>
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Sevimli, el yapımı ve sana özel küçük mutluluklar. 🐸💚
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Hızlı Menü</h3>
+
+                <a href="#anasayfa">Ana Sayfa</a>
+                <a href="#urunler">Ürünler</a>
+                <a href="#hakkimizda">Hakkımızda</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Müşteri Hizmetleri</h3>
+
+                <button
+                    class="footer-text-button"
+                    id="orderTrackingBtn"
+                    type="button"
+                >
+                    Sipariş Takibi
+                </button>
+
+                <button
+                    class="footer-text-button"
+                    id="shippingInfoBtn"
+                    type="button"
+                >
+                    Kargo Bilgileri
+                </button>
+
+                <button
+                    class="footer-text-button"
+                    id="returnPolicyBtn"
+                    type="button"
+                >
+                    İade Politikası
+                </button>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Bizi Takip Et</h3>
+
+                <div class="social-buttons">
+
+                    <a
+                        class="social-button"
+                        href="https://www.tiktok.com/@cuteclayshop?_r=1&_t=ZS-99Enxvj0Cvd"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="TikTok"
+                    >
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+
+                    <button
+                        class="social-button"
+                        id="instagramBtn"
+                        type="button"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </button>
+
+
+                    <button
+                        class="social-button"
+                        id="whatsappBtn"
+                        type="button"
+                        aria-label="WhatsApp"
+                    >
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <span>
+                © 2026 CuteClayShop • Sevgiyle yapıldı 🐸💚
+            </span>
+
+
+            <button
+                id="footerSellerBtn"
+                type="button"
+            >
+                <i class="fa-solid fa-lock"></i>
+                Satıcı Girişi
+            </button>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         SEPET
+    ========================== -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+    ></div>
+
+
+    <aside
+        class="cart-sidebar"
+        id="cartSidebar"
+    >
+
+        <div class="cart-header">
+
+            <div>
+                <span class="eyebrow">ALIŞVERİŞİN 🐸</span>
+                <h2>Sepetin</h2>
+            </div>
+
+
+            <button
+                id="closeCart"
+                type="button"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        ></div>
+
+
+        <div
+            class="cart-empty"
+            id="cartEmpty"
+        >
+            <div>🛒</div>
+            <h3>Sepetin şu an boş!</h3>
+            <p>Biraz sevimli ürün eklemeye ne dersin?</p>
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="coupon-box">
+
+                <input
+                    type="text"
+                    id="couponInput"
+                    placeholder="İndirim kodu"
+                >
+
+                <button
+                    id="applyCoupon"
+                    type="button"
+                >
+                    Uygula
+                </button>
+
+            </div>
+
+
+            <div class="cart-price-row">
+                <span>Ara Toplam</span>
+                <strong id="cartSubtotal">0 TL</strong>
+            </div>
+
+
+            <div class="cart-price-row">
+                <span>İndirim</span>
+                <strong id="cartDiscount">0 TL</strong>
+            </div>
+
+
+            <div class="cart-price-row total-row">
+                <span>Toplam</span>
+                <strong id="cartTotal">0 TL</strong>
+            </div>
+
+
+            <button
+                class="checkout-button"
+                id="checkoutBtn"
+                type="button"
+            >
+                Ödemeye Geç 💳
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- FAVORİLER -->
+
+    <div
+        class="modal"
+        id="favoritesModal"
+    >
+
+        <div class="modal-box favorites-box">
+
+            <button
+                class="modal-close"
+                data-close="favoritesModal"
+                type="button"
+            >
+                ✕
+            </button>
+
+
+            <span class="eyebrow">
+                SENİN SEÇTİKLERİN 💚
+            </span>
+
+
+            <h2>Favorilerim</h2>
+
+
+            <div
+                class="favorite-list"
+                id="favoriteList"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ÜRÜN DETAY -->
+
+    <div
+        class="modal"
+        id="productModal"
+    >
+
+        <div class="modal-box product-detail-modal">
+
+            <button
+                class="modal-close"
+                data-close="productModal"
+                type="button"
+            >
+                ✕
+            </button>
+
+
+            <div
+                id="quickProductContent"
+                class="quick-product-content"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ÖDEME -->
+
+    <div
+        class="modal"
+        id="checkoutModal"
+    >
+
+        <div class="modal-box checkout-modal-box">
+
+            <button
+                class="modal-close"
+                data-close="checkoutModal"
+                type="button"
+            >
+                ✕
+            </button>
+
+
+            <span class="eyebrow">
+                SON BİR ADIM 🐸
+            </span>
+
+
+            <h2>Sipariş Bilgileri</h2>
+
+
+            <form id="checkoutForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="customerName">Ad Soyad</label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="customerPhone">Telefon</label>
+
+                        <input
+                            type="tel"
+                            id="customerPhone"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="customerEmail">E-posta</label>
+
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="customerAddress">Teslimat Adresi</label>
+
+                    <textarea
+                        id="customerAddress"
+                        required
+                    ></textarea>
+                </div>
+
+
+                <div class="payment-area">
+
+                    <h3>Ödeme Yöntemi</h3>
+
+
+                    <label class="payment-option active-payment">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Kapıda Ödeme"
+                            checked
+                        >
+
+                        <span>💵 Kapıda Ödeme</span>
+
+                    </label>
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Kart ile Ödeme"
+                        >
+
+                        <span>💳 Kart ile Ödeme</span>
+
+                    </label>
+
+                </div>
+
+
+                <div
+                    class="card-info hidden"
+                    id="cardInfo"
+                >
+
+                    <div class="form-group">
+                        <label for="cardName">Kart Üzerindeki İsim</label>
+                        <input type="text" id="cardName">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="cardNumber">Kart Numarası</label>
+
+                        <input
+                            type="text"
+                            id="cardNumber"
+                            maxlength="19"
+                            placeholder="0000 0000 0000 0000"
+                        >
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="cardDate">Son Kullanma</label>
+
+                            <input
+                                type="text"
+                                id="cardDate"
+                                placeholder="AA/YY"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="cardCVV">CVV</label>
+
+                            <input
+                                type="password"
+                                id="cardCVV"
+                                maxlength="3"
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="complete-order-button"
+                    type="submit"
+                >
+                    Siparişi Tamamla 🐸💚
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- SATICI GİRİŞ -->
+
+    <div
+        class="modal"
+        id="sellerLoginModal"
+    >
+
+        <div class="modal-box seller-login-box">
+
+            <button
+                class="modal-close"
+                data-close="sellerLoginModal"
+                type="button"
+            >
+                ✕
+            </button>
+
+
+            <img
+                class="seller-login-logo"
+                src="Sevimli Kil Aksesuar Dükkanı Logosu (4).png"
+                alt="CuteClayShop"
+            >
+
+
+            <span class="eyebrow">
+                SADECE MAĞAZA SAHİBİ 🐸
+            </span>
+
+
+            <h2>Satıcı Girişi</h2>
+
+
+            <p>
+                CuteClayShop yönetim paneline giriş yap.
+            </p>
+
+
+            <form id="sellerLoginForm">
+
+                <div class="form-group">
+
+                    <label for="sellerUsername">
+                        Kullanıcı Adı
+                    </label>
+
+                    <input
+                        type="text"
+                        id="sellerUsername"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="sellerPassword">
+                        Şifre
+                    </label>
+
+                    <input
+                        type="password"
+                        id="sellerPassword"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    class="seller-login-submit"
+                    type="submit"
+                >
+                    Yönetim Paneline Gir →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SATICI PANELİ
+    ========================== -->
+
+    <div
+        class="seller-dashboard"
+        id="sellerDashboard"
+    >
+
+        <aside class="dashboard-sidebar">
+
+
+            <div class="dashboard-brand">
+
+                <img
+                    src="Sevimli Kil Aksesuar Dükkanı Logosu (4).png"
+                    alt="CuteClayShop"
+                >
+
+                <strong>CuteClayShop</strong>
+
+            </div>
+
+
+            <div class="dashboard-owner">
+
+                <div class="owner-avatar">🐸</div>
+
+                <div>
+                    <strong>Mağaza Sahibi</strong>
+                    <span>Yönetici</span>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-menu">
+
+                <button
+                    class="dashboard-nav active-dashboard-nav"
+                    data-panel="overview"
+                    type="button"
+                >
+                    📊 Genel Bakış
+                </button>
+
+
+                <button
+                    class="dashboard-nav"
+                    data-panel="products"
+                    type="button"
+                >
+                    🛍️ Ürünler
+                </button>
+
+
+                <button
+                    class="dashboard-nav"
+                    data-panel="orders"
+                    type="button"
+                >
+                    📦 Siparişler
+                </button>
+
+
+                <button
+                    class="dashboard-nav"
+                    data-panel="discounts"
+                    type="button"
+                >
+                    🏷️ İndirimler
+                </button>
+
+
+                <!-- =========================
+                     YENİ AYARLAR KATEGORİSİ
+                ========================== -->
+
+                <button
+                    class="dashboard-nav"
+                    data-panel="settings"
+                    type="button"
+                >
+                    ⚙️ Ayarlar
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-sidebar-bottom">
+
+                <button
+                    id="goShopBtn"
+                    type="button"
+                >
+                    🏡 Mağazaya Dön
+                </button>
+
+
+                <button
+                    id="sellerLogoutBtn"
+                    type="button"
+                >
+                    🚪 Çıkış Yap
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <main class="dashboard-main">
+
+
+            <!-- GENEL BAKIŞ -->
+
+            <section
+                class="dashboard-panel active-panel"
+                id="overviewPanel"
+            >
+
+                <div class="dashboard-title-row">
+
+                    <div>
+                        <span class="eyebrow">HOŞ GELDİN 🐸</span>
+                        <h1>CuteClayShop Yönetimi</h1>
+                    </div>
+
+
+                    <button
+                        class="dashboard-add-button"
+                        id="quickAddProduct"
+                        type="button"
+                    >
+                        + Yeni Ürün
+                    </button>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <span>🛍️</span>
+
+                        <div>
+                            <small>Toplam Ürün</small>
+                            <strong id="statProducts">0</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <span>📦</span>
+
+                        <div>
+                            <small>Siparişler</small>
+                            <strong id="statOrders">0</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <span>💰</span>
+
+                        <div>
+                            <small>Toplam Kazanç</small>
+                            <strong id="statRevenue">0 TL</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h2>Son Siparişler 📦</h2>
+
+                    <div id="recentOrders"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ÜRÜNLER -->
+
+            <section
+                class="dashboard-panel"
+                id="productsPanel"
+            >
+
+                <div class="dashboard-title-row">
+
+                    <div>
+                        <span class="eyebrow">ÜRÜN YÖNETİMİ</span>
+                        <h1>Ürünlerim 🛍️</h1>
+                    </div>
+
+
+                    <button
+                        class="dashboard-add-button"
+                        id="addProductBtn"
+                        type="button"
+                    >
+                        + Yeni Ürün Ekle
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="seller-product-grid"
+                    id="sellerProductGrid"
+                ></div>
+
+            </section>
+
+
+            <!-- SİPARİŞLER -->
+
+            <section
+                class="dashboard-panel"
+                id="ordersPanel"
+            >
+
+                <div class="dashboard-title-row">
+
+                    <div>
+                        <span class="eyebrow">MÜŞTERİ SİPARİŞLERİ</span>
+                        <h1>Siparişler 📦</h1>
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="seller-orders-list"
+                    id="sellerOrdersList"
+                ></div>
+
+            </section>
+
+
+            <!-- İNDİRİMLER -->
+
+            <section
+                class="dashboard-panel"
+                id="discountsPanel"
+            >
+
+                <div class="dashboard-title-row">
+
+                    <div>
+                        <span class="eyebrow">KAMPANYALAR</span>
+                        <h1>İndirim Yönetimi 🏷️</h1>
+                    </div>
+
+                </div>
+
+
+                <div class="discount-management">
+
+                    <div class="dashboard-card">
+
+                        <h2>Kupon Oluştur 🎟️</h2>
+
+
+                        <form id="couponForm">
+
+                            <div class="form-group">
+
+                                <label for="newCouponCode">
+                                    Kupon Kodu
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="newCouponCode"
+                                    placeholder="Örn: CUTE10"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="newCouponPercent">
+                                    İndirim Yüzdesi
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="newCouponPercent"
+                                    min="1"
+                                    max="100"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <button
+                                class="dashboard-save-button"
+                                type="submit"
+                            >
+                                Kupon Oluştur ✨
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <h2>Aktif Kuponlar</h2>
+
+                        <div id="couponList"></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 AYARLAR
+                 İNDİRİMLERİN ALTINDA
+            ========================== -->
+
+            <section
+                class="dashboard-panel"
+                id="settingsPanel"
+            >
+
+                <div class="dashboard-title-row">
+
+                    <div>
+                        <span class="eyebrow">MAĞAZA HESABI ⚙️</span>
+                        <h1>Ayarlar</h1>
+
+                        <p>
+                            Satıcı hesabının kullanıcı adı ve şifresini
+                            buradan değiştirebilirsin.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h2>Hesap Bilgileri 🔐</h2>
+
+
+                    <form id="sellerSettingsForm">
+
+
+                        <div class="form-group">
+
+                            <label for="settingsUsername">
+                                Yeni Kullanıcı Adı
+                            </label>
+
+                            <input
+                                type="text"
+                                id="settingsUsername"
+                                placeholder="Yeni kullanıcı adı"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="settingsCurrentPassword">
+                                Mevcut Şifre
+                            </label>
+
+                            <input
+                                type="password"
+                                id="settingsCurrentPassword"
+                                placeholder="Mevcut şifren"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="settingsNewPassword">
+                                Yeni Şifre
+                            </label>
+
+                            <input
+                                type="password"
+                                id="settingsNewPassword"
+                                placeholder="Yeni şifre"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="settingsNewPasswordConfirm">
+                                Yeni Şifre Tekrar
+                            </label>
+
+                            <input
+                                type="password"
+                                id="settingsNewPasswordConfirm"
+                                placeholder="Yeni şifreyi tekrar yaz"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <button
+                            class="dashboard-save-button"
+                            id="saveSellerSettings"
+                            type="submit"
+                        >
+                            💾 Değişiklikleri Kaydet
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ÜRÜN EKLEME -->
+
+    <div
+        class="modal"
+        id="productFormModal"
+    >
+
+        <div class="modal-box product-form-modal-box">
+
+            <button
+                class="modal-close"
+                data-close="productFormModal"
+                type="button"
+            >
+                ✕
+            </button>
+
+
+            <span class="eyebrow">
+                ÜRÜN YÖNETİMİ 🐸
+            </span>
+
+
+            <h2 id="productFormTitle">
+                Yeni Ürün Ekle
+            </h2>
+
+
+            <form id="productForm">
+
+                <input
+                    type="hidden"
+                    id="editingProductId"
+                >
+
+
+                <div class="image-upload-area">
+
+                    <input
+                        type="file"
+                        id="productImageInput"
+                        accept="image/*"
+                    >
+
+
+                    <label
+                        for="productImageInput"
+                        id="imagePreview"
+                    >
+                        <span>🖼️</span>
+                        <strong>Ürün Fotoğrafı Yükle</strong>
+                        <small>Gerçek ürün fotoğrafını seç</small>
+                    </label>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="productName">
+                            Ürün Adı
+                        </label>
+
+                        <input
+                            type="text"
+                            id="productName"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productCategory">
+                            Kategori
+                        </label>
+
+                        <select id="productCategory">
+                            <option value="Anahtarlık">Anahtarlık</option>
+                            <option value="Charm">Charm</option>
+                            <option value="Küpe">Küpe</option>
+                            <option value="Kolye">Kolye</option>
+                            <option value="Diğer">Diğer</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productDescription">
+                        Açıklama
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="productPrice">
+                            Fiyat (TL)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productPrice"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productDiscount">
+                            İndirim (%)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productDiscount"
+                            min="0"
+                            max="100"
+                            value="0"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="save-product-button"
+                    type="submit"
+                >
+                    Ürünü Kaydet 🐸💚
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- BİLGİ MODALI -->
+
+    <div
+        class="modal"
+        id="infoModal"
+    >
+
+        <div class="modal-box info-modal-box">
+
+            <button
+                class="modal-close"
+                data-close="infoModal"
+                type="button"
+            >
+                ✕
+            </button>
+
+
+            <div id="infoModalContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+
+        <span id="toastIcon">🐸</span>
+
+        <p id="toastText"></p>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
