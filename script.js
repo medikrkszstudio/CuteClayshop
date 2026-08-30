@@ -5448,3 +5448,180 @@ document.addEventListener("click", function (e) {
     }, true);
 
 })();
+/* =====================================================
+   CUTECLAYSHOP - MOBİL YÖNETİM PANELİ DÜZELTME
+   SADECE MOBİLİ ETKİLER
+===================================================== */
+
+(function () {
+
+    function mobileDashboardFix() {
+
+        if (window.innerWidth > 800) return;
+
+        const dashboard = document.getElementById("sellerDashboard");
+        if (!dashboard) return;
+
+        /* Menü butonlarını görünür yap */
+        const nav = dashboard.querySelector(".dashboard-sidebar");
+
+        if (nav) {
+            nav.style.display = "flex";
+            nav.style.flexDirection = "column";
+            nav.style.width = "100%";
+            nav.style.height = "auto";
+        }
+
+        /* Dashboard ana alanı */
+        const main = dashboard.querySelector(".dashboard-main");
+
+        if (main) {
+            main.style.width = "100%";
+            main.style.maxWidth = "100%";
+            main.style.boxSizing = "border-box";
+            main.style.overflowX = "hidden";
+        }
+
+        /* Ürün kartlarını küçült */
+        const cards = dashboard.querySelectorAll(
+            ".seller-product-card, .product-card"
+        );
+
+        cards.forEach(card => {
+
+            card.style.width = "100%";
+            card.style.maxWidth = "100%";
+            card.style.minWidth = "0";
+            card.style.boxSizing = "border-box";
+
+            const images = card.querySelectorAll("img");
+
+            images.forEach(img => {
+
+                img.style.display = "block";
+                img.style.visibility = "visible";
+                img.style.opacity = "1";
+                img.style.maxWidth = "100%";
+                img.style.width = "100%";
+                img.style.height = "auto";
+                img.style.objectFit = "cover";
+
+            });
+
+        });
+
+    }
+
+
+    /* Sayfa açıldığında */
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(mobileDashboardFix, 300);
+    });
+
+
+    /* Ekran boyutu değişince */
+    window.addEventListener("resize", mobileDashboardFix);
+
+
+    /* Yönetim paneli menülerini yakala */
+    document.addEventListener("click", function (event) {
+
+        if (window.innerWidth > 800) return;
+
+        const button = event.target.closest(
+            "#sellerDashboard .dashboard-nav"
+        );
+
+        if (!button) return;
+
+        const panelName = button.getAttribute("data-panel");
+
+        if (!panelName) return;
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        const dashboard =
+            document.getElementById("sellerDashboard");
+
+        if (!dashboard) return;
+
+
+        /* Bütün panelleri gizle */
+        dashboard
+            .querySelectorAll(".dashboard-panel")
+            .forEach(panel => {
+
+                panel.classList.remove("active-panel");
+                panel.style.display = "none";
+
+            });
+
+
+        /* Bütün butonları pasifleştir */
+        dashboard
+            .querySelectorAll(".dashboard-nav")
+            .forEach(navButton => {
+
+                navButton.classList.remove("active");
+
+            });
+
+
+        /* Tıklanan buton */
+        button.classList.add("active");
+
+
+        /* İstenen panel */
+        const target =
+            document.getElementById(panelName + "Panel");
+
+        if (target) {
+
+            target.style.display = "block";
+            target.classList.add("active-panel");
+
+        }
+
+
+        /* Ürünler açıldığında */
+        if (
+            panelName === "products" &&
+            typeof renderSellerProducts === "function"
+        ) {
+            renderSellerProducts();
+        }
+
+
+        /* Siparişler açıldığında */
+        if (
+            panelName === "orders" &&
+            typeof renderSellerOrders === "function"
+        ) {
+            renderSellerOrders();
+        }
+
+
+        /* İndirimler açıldığında */
+        if (
+            panelName === "discounts" &&
+            typeof renderSellerDiscounts === "function"
+        ) {
+            renderSellerDiscounts();
+        }
+
+
+        /* Ayarlar açıldığında */
+        if (
+            panelName === "settings" &&
+            typeof createSellerSettings === "function"
+        ) {
+            createSellerSettings();
+        }
+
+
+        setTimeout(mobileDashboardFix, 100);
+
+    }, true);
+
+})();

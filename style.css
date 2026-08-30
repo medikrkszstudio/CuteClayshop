@@ -2812,3 +2812,67 @@ body.modal-open {
     }
 
 }
+/* =====================================================
+   SADECE TELEFON
+===================================================== */
+
+@media (max-width: 800px) {
+
+    #sellerDashboard {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    #sellerDashboard .dashboard-sidebar {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    #sellerDashboard .dashboard-nav {
+        width: 100% !important;
+        min-height: 42px !important;
+        padding: 9px 12px !important;
+        font-size: 14px !important;
+        box-sizing: border-box !important;
+    }
+
+    #sellerDashboard .dashboard-main {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+
+    #sellerDashboard .seller-product-grid,
+    #sellerDashboard .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+
+    #sellerDashboard .seller-product-card,
+    #sellerDashboard .product-card {
+        min-width: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #sellerDashboard .seller-product-card img,
+    #sellerDashboard .product-card img {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        height: 125px !important;
+        object-fit: cover !important;
+    }
+
+    #sellerDashboard .dashboard-card {
+        padding: 10px !important;
+    }
+}
