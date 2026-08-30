@@ -5344,3 +5344,107 @@ document.addEventListener("click", function (e) {
         }
     }
 });
+/* =========================================================
+   CUTECLAYSHOP - YÖNETİM PANELİ MENÜ DÜZELTME
+   EN ALTA EKLE
+========================================================= */
+
+(function () {
+
+    function activateDashboardPanel(panelName) {
+
+        const dashboard = document.getElementById("sellerDashboard");
+        if (!dashboard) return;
+
+        /* Bütün panelleri kapat */
+        dashboard.querySelectorAll(".dashboard-panel").forEach(panel => {
+            panel.classList.remove("active-panel");
+        });
+
+        /* Bütün butonları pasifleştir */
+        dashboard.querySelectorAll(".dashboard-nav").forEach(button => {
+            button.classList.remove("active-dashboard-nav");
+        });
+
+        /* Tıklanan butonu aktif yap */
+        const button = dashboard.querySelector(
+            `.dashboard-nav[data-panel="${panelName}"]`
+        );
+
+        if (button) {
+            button.classList.add("active-dashboard-nav");
+        }
+
+        /* İstenen panel */
+        const panel = document.getElementById(
+            panelName + "Panel"
+        );
+
+        if (panel) {
+            panel.classList.add("active-panel");
+        }
+
+        /* Panel açılırken içerikleri yenile */
+        if (panelName === "products" &&
+            typeof renderSellerProducts === "function") {
+            renderSellerProducts();
+        }
+
+        if (panelName === "orders" &&
+            typeof renderSellerOrders === "function") {
+            renderSellerOrders();
+        }
+
+        if (panelName === "discounts" &&
+            typeof renderSellerDiscounts === "function") {
+            renderSellerDiscounts();
+        }
+
+        if (panelName === "settings" &&
+            typeof loadSellerSettings === "function") {
+            loadSellerSettings();
+        }
+    }
+
+
+    /* Event'i CAPTURE aşamasında yakalıyoruz.
+       Böylece eski hatalı click kodları menüyü bozsa bile
+       bizim kodumuz çalışacak. */
+
+    document.addEventListener("click", function (event) {
+
+        const button = event.target.closest(
+            "#sellerDashboard .dashboard-nav"
+        );
+
+        if (!button) return;
+
+        const panelName = button.dataset.panel;
+
+        if (!panelName) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        activateDashboardPanel(panelName);
+
+    }, true);
+
+
+    /* Mağazaya Dön */
+    document.addEventListener("click", function (event) {
+
+        const button = event.target.closest("#goShopBtn");
+
+        if (!button) return;
+
+        const dashboard =
+            document.getElementById("sellerDashboard");
+
+        if (dashboard) {
+            dashboard.classList.remove("active");
+        }
+
+    }, true);
+
+})();
