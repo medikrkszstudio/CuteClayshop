@@ -5297,3 +5297,50 @@ renderDashboard();
 
 
 })();
+/* SATIŞ PANELİ MENÜLERİ - EN ALTA EKLE */
+document.addEventListener("click", function (e) {
+    const button = e.target.closest(".dashboard-nav");
+    if (!button) return;
+
+    const panelName = button.dataset.panel;
+    if (!panelName) return;
+
+    // Tüm menü butonlarının aktifliğini kaldır
+    document.querySelectorAll(".dashboard-nav").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    // Tıklananı aktif yap
+    button.classList.add("active");
+
+    // Tüm dashboard panellerini gizle
+    document.querySelectorAll(
+        ".dashboard-panel, .seller-panel, [data-dashboard-panel]"
+    ).forEach(panel => {
+        panel.style.display = "none";
+        panel.classList.remove("active");
+    });
+
+    // İstenen paneli bul ve göster
+    const panel =
+        document.getElementById(panelName) ||
+        document.querySelector(`[data-panel-content="${panelName}"]`) ||
+        document.querySelector(`.${panelName}-panel`);
+
+    if (panel) {
+        panel.style.display = "";
+        panel.classList.add("active");
+    }
+
+    // Ayarlar özel olarak oluşturuluyorsa oluştur
+    if (panelName === "settings" && typeof createSellerSettings === "function") {
+        const settingsPanel =
+            document.getElementById("settings") ||
+            document.querySelector(".settings-panel");
+
+        if (settingsPanel) {
+            settingsPanel.style.display = "";
+            settingsPanel.classList.add("active");
+        }
+    }
+});

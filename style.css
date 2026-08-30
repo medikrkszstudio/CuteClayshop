@@ -2618,3 +2618,98 @@ body.modal-open {
     font-weight: 400 !important;
     line-height: 1 !important;
 }
+/* ================================
+   MOBİL ÜRÜN FOTOĞRAFLARI + KARTLAR
+   CSS DOSYASININ EN ALTINA EKLE
+   ================================ */
+
+@media (max-width: 768px) {
+
+    /* Ürün alanının ekrandan taşmasını engelle */
+    .products-grid,
+    .product-grid,
+    .products-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: visible !important;
+    }
+
+    /* Ürün kartlarını küçült */
+    .product-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Ürün fotoğrafının kaybolmasını engelle */
+    .product-card img,
+    .product-image,
+    .product-card .product-image img {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: 280px !important;
+        object-fit: contain !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Fotoğraf kapsayıcısı */
+    .product-card .product-image {
+        width: 100% !important;
+        height: 220px !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Mobilde aşırı büyük yazı/kutuları düzelt */
+    .product-card h3,
+    .product-card h4 {
+        font-size: 16px !important;
+    }
+
+    .product-card p {
+        font-size: 14px !important;
+    }
+
+    .product-card button {
+        font-size: 14px !important;
+        padding: 10px 12px !important;
+    }
+
+    /* Grid'i telefona uygun hale getir */
+    .products-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+}
+
+/* Çok küçük telefonlar */
+@media (max-width: 480px) {
+
+    .products-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .product-card .product-image {
+        height: 170px !important;
+    }
+
+    .product-card img,
+    .product-image img {
+        max-height: 170px !important;
+    }
+
+    .product-card {
+        padding: 10px !important;
+    }
+}
